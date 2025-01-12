@@ -1,0 +1,129 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.search-box input {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+.search-box button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.error {
+  color: red;
+  margin-top: 10px;
+}
+.weather-info {
+  margin-top: 20px;
+}
+.App.sunny-background {
+  background: linear-gradient(to bottom, #87CEEB, #FFD700);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bouncy-sun {
+  width: 150px;
+  height: 150px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  animation: bounce 3s infinite ease-in-out;
+  top: 50px;
+  right: 50px;
+  boxShadow: '0 0 50px rgba(255, 223, 0, 0.8)'
+}
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cloud {
+  width: 150px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: moveClouds 10s linear infinite;
+  opacity: 0.8;
+}
+
+.cloud:nth-child(1) {
+  top: 50px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.cloud:nth-child(2) {
+  top: 100px;
+  left: -200px;
+  animation-delay: 3s;
+}
+
+.cloud:nth-child(3) {
+  top: 20px;
+  left: -250px;
+  animation-delay: 6s;
+}
+
+@keyframes moveClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
